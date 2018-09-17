@@ -14,10 +14,7 @@ struct RentalCar
     bool available;
     
 };
-int myStringLength(const char *str);
-int myStringCompare(const char *str1, const char *str2);
-char *myStringCopy(char *destination, const char *source);
-char *myStringCat(char *destination, const char *source);
+
 int txtinput(RentalCar string[5], int i);
 void txtoutput(RentalCar string[5], int i);
 void display(RentalCar string[], int i);
@@ -88,92 +85,6 @@ int main()
     
     
     return 0;
-}
-
-int myStringLength(char *str)
-{
-    int i = 0;
-    while (*str != '\0')
-    {
-        str++;
-        i++;
-    }
-    return i;
-}
-
-int myStringCompare(const char *str1, const char *str2)
-{
-    
-    char *string1, *string2;
-    myStringCopy(string1, str1);
-    myStringCopy(string2, str2);
-    
-    while((*string1 != '\0') && (*string2 != '\0'))
-    {
-        if ((*string1 >= 65) && (*string1 <= 90))
-        {
-            *string1 += 32;
-        }
-        if ((*string2 >= 65) && (*string2 <= 90))
-        {
-            *string2 += 32;
-        }
-        if ((*string2 >= 65) && (*string2 <= 90))
-        {
-            *string2 += 32;
-        }
-        string1++;
-        string2++;
-    }
-    
-    while(*string1 != '\0' && *string2 != '\0')
-    {
-        if (*string1 < *string2)
-            
-        {
-            return 1;
-        }
-        else if (*string1 > *string2)
-            
-        {
-            return -1;
-        }
-        string1++;
-        string2++;
-    }
-    if (*string1 == *string2)
-    {return 0;}
-    return 0;
-}
-
-char *myStringCopy(char *destination, const char *source)
-{
-    char *i;
-    i = destination;
-    while (*source != '\0')
-    {
-        *destination = *source;
-        source++;
-        destination++;
-    } *destination = '\0';
-    return i;
-}
-
-char *myStringCat(char *destination, const char *source)
-{
-    char *i;
-    i = destination;
-    while (*destination)
-    {destination++;}
-    
-    while(*source)
-    {
-        *destination = *source;
-        source++;
-        destination++;
-    }
-    *destination = '\0';
-    return i;
 }
 
 int txtinput(RentalCar string[5], int i)
@@ -292,24 +203,3 @@ void checking(RentalCar string[], int check)
     string[check].available = false;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
